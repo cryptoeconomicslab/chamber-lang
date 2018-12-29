@@ -11,20 +11,20 @@ describe('generate', function() {
   describe('SimpleToken.chr', function() {
     describe('generate solidity', function() {
       it('should parse the chamber lang and generate solidity source code', function(done) {
-        const src = fs.readFileSync(path.join(__dirname, '../examples/SimpleToken.chr'));
+        const src = fs.readFileSync(path.join(__dirname, '../contracts/SimpleToken.chr'));
         const output = generator(src, 'sol');
         assert.equal(output.toString().length > 0, true);
-        fs.writeFileSync(path.join(__dirname, '../examples/SimpleToken.sol'), output);
+        fs.writeFileSync(path.join(__dirname, '../contracts/SimpleToken.sol'), output);
         done();
       });
     })
 
     describe('generate javascript', function() {
       it('should parse the chamber lang and generate JavaScript source code', function(done) {
-        const src = fs.readFileSync(path.join(__dirname, '../examples/SimpleToken.chr'));
+        const src = fs.readFileSync(path.join(__dirname, '../contracts/SimpleToken.chr'));
         const output = generator(src, 'js');
         assert.equal(output.toString().length > 0, true);
-        fs.writeFileSync(path.join(__dirname, '../examples/SimpleToken.js'), output);
+        fs.writeFileSync(path.join(__dirname, '../contracts/SimpleToken.js'), output);
         done();
       });
     })
@@ -33,86 +33,43 @@ describe('generate', function() {
   describe('SellOrder.chr', function() {
     describe('generate solidity', function() {
       it('should parse the chamber lang and generate solidity source code', function(done) {
-        const src = fs.readFileSync(path.join(__dirname, '../examples/SellOrder.chr'));
+        const src = fs.readFileSync(path.join(__dirname, '../contracts/SellOrder.chr'));
         const output = generator(src, 'sol');
         assert.equal(output.toString().length > 0, true);
-        fs.writeFileSync(path.join(__dirname, '../examples/SellOrder.sol'), output);
+        fs.writeFileSync(path.join(__dirname, '../contracts/SellOrder.sol'), output);
         done();
       });
     })
 
     describe('generate javascript', function() {
       it('should parse the chamber lang and generate JavaScript source code', function(done) {
-        const src = fs.readFileSync(path.join(__dirname, '../examples/SellOrder.chr'));
+        const src = fs.readFileSync(path.join(__dirname, '../contracts/SellOrder.chr'));
         const output = generator(src, 'js');
         assert.equal(output.toString().length > 0, true);
-        fs.writeFileSync(path.join(__dirname, '../examples/SellOrder.js'), output);
+        fs.writeFileSync(path.join(__dirname, '../contracts/SellOrder.js'), output);
         done();
       });
     })
   })
 
-  describe('ArgsExample.chr', function() {
+
+  describe('MultisigGame.chr', function() {
     describe('generate solidity', function() {
       it('should parse the chamber lang and generate solidity source code', function(done) {
-        const src = fs.readFileSync(path.join(__dirname, '../examples/ArgsExample.chr'));
+        const src = fs.readFileSync(path.join(__dirname, '../contracts/MultisigGame.chr'));
         const output = generator(src, 'sol');
         assert.equal(output.toString().length > 0, true);
-        fs.writeFileSync(path.join(__dirname, '../examples/ArgsExample.sol'), output);
+        fs.writeFileSync(path.join(__dirname, '../contracts/MultisigGame.sol'), output);
         done();
       });
     })
 
     describe('generate javascript', function() {
       it('should parse the chamber lang and generate JavaScript source code', function(done) {
-        const src = fs.readFileSync(path.join(__dirname, '../examples/ArgsExample.chr'));
+        const src = fs.readFileSync(path.join(__dirname, '../contracts/MultisigGame.chr'));
         const output = generator(src, 'js');
         assert.equal(output.toString().length > 0, true);
-        fs.writeFileSync(path.join(__dirname, '../examples/ArgsExample.js'), output);
-        done();
-      });
-    })
-  })
-
-  describe('LifeCycle.chr', function() {
-    describe('generate solidity', function() {
-      it('should parse the chamber lang and generate solidity source code', function(done) {
-        const src = fs.readFileSync(path.join(__dirname, '../examples/LifeCycle.chr'));
-        const output = generator(src, 'sol');
-        assert.equal(output.toString().length > 0, true);
-        fs.writeFileSync(path.join(__dirname, '../examples/LifeCycle.sol'), output);
-        done();
-      });
-    })
-
-    describe('generate javascript', function() {
-      it('should parse the chamber lang and generate JavaScript source code', function(done) {
-        const src = fs.readFileSync(path.join(__dirname, '../examples/LifeCycle.chr'));
-        const output = generator(src, 'js');
-        assert.equal(output.toString().length > 0, true);
-        fs.writeFileSync(path.join(__dirname, '../examples/LifeCycle.js'), output);
-        done();
-      });
-    })
-  })
-
-  describe('ExitSafety.chr', function() {
-    describe('generate solidity', function() {
-      it('should parse the chamber lang and generate solidity source code', function(done) {
-        const src = fs.readFileSync(path.join(__dirname, '../examples/ExitSafety.chr'));
-        const output = generator(src, 'sol');
-        assert.equal(output.toString().length > 0, true);
-        fs.writeFileSync(path.join(__dirname, '../examples/ExitSafety.sol'), output);
-        done();
-      });
-    })
-
-    describe('generate javascript', function() {
-      it('should parse the chamber lang and generate JavaScript source code', function(done) {
-        const src = fs.readFileSync(path.join(__dirname, '../examples/ExitSafety.chr'));
-        const output = generator(src, 'js');
-        assert.equal(output.toString().length > 0, true);
-        fs.writeFileSync(path.join(__dirname, '../examples/ExitSafety.js'), output);
+        fs.writeFileSync(path.join(__dirname, '../contracts/MultisigGame.js'), output);
         done();
       });
     })

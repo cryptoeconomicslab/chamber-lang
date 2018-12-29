@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "mocha",
+    "test:compile": "mocha -g MultisigGame test/generate_test.js",
     "test:multisig": "truffle test test/MultisigGame.test.js"
   },
   "author": "",

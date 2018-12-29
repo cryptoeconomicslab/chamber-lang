@@ -8,6 +8,12 @@ contract MultisigGame {
 
   @continuable(bytes hashedHandA => bytes, bytes hashedHandB => bytes)
   public clause commit(output txo) returns (output txo) {
+    if(true){
+      console.log('hoge')
+    }
+    for(var i = 0; i<10;i++){
+      console.log('fuga') 
+    }
   }
 
   @finish
