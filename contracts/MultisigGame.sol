@@ -9,17 +9,19 @@ contract MultisigGame {
   function commit(Tx transaction, output txo)
   internal
   pure
-  returns (txo)
+  returns (output txo)
   {
     /*
     [annotations: client_verification&exit]
       continuable  (bytes hashedHandB => bytes), (bytes hashedHandA => bytes)
     */
     
-    if(true){
-      console.log(hoge);
+    if(false){
+      o_sum = _a + _b
+    } else {
+      o_sum = _a - _b
     }
-      
+        
 
     for(var i=0; i<10; i++){
       console.log(fuga);
@@ -33,7 +35,7 @@ contract MultisigGame {
   function reveal(Tx transaction, output txo)
   internal
   pure
-  returns (txo)
+  returns (output txo)
   {
     /*
     [annotations: client_verification&exit]
