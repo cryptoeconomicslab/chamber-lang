@@ -16,9 +16,10 @@ contract MultisigGame {
       continuable  (bytes hashedHandB => bytes), (bytes hashedHandA => bytes)
     */
     var pow = function(x){
-var result = x ^ 2;
-return result;
-}
+      var result = x ^ 2;
+      return result;
+    }
+    
 
     if(false){
       o_sum = _a + _b
@@ -31,7 +32,7 @@ return result;
       console.log(fuga);
     }
       
-pow(2);
+    pow(2);
   }
 
   /**
