@@ -6,10 +6,10 @@ contract MultisigGame {
   /**
   * @dev MultisigGame.commit
   */
-  function commit(Tx transaction, output txo)
+  function commit(txo contract, string[] hashes)
   internal
   pure
-  returns (output txo)
+  returns (txo contract)
   {
     /*
     [annotations: client_verification&exit]
@@ -17,7 +17,7 @@ contract MultisigGame {
     */
     
     if(false){
-      o_sum = _a + _b
+      o_sum =     pow(2);
     } else {
       o_sum = _a - _b
     }
@@ -27,16 +27,15 @@ contract MultisigGame {
       console.log(fuga);
     }
       
-    pow(2);
   }
 
   /**
   * @dev MultisigGame.reveal
   */
-  function reveal(Tx transaction, output txo)
+  function reveal(txo contract, output txo)
   internal
   pure
-  returns (output txo)
+  returns (txo contract, output txo)
   {
     /*
     [annotations: client_verification&exit]
@@ -49,14 +48,14 @@ contract MultisigGame {
   /**
   * @dev MultisigGame.pow
   */
-  function pow(string hoge)
+  function pow(uint x)
   private
   pure
-  returns (bool result)
+  returns (uint y)
   {
     
-    var result = x ^ 2;
-    result;
+    var y = x ^ 2;
+
   }
 
 
