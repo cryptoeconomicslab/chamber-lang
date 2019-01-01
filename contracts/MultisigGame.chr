@@ -7,11 +7,7 @@ contract MultisigGame {
   }
 
   @continuable(bytes hashedHandA => bytes, bytes hashedHandB => bytes)
-  public clause commit(output txo) returns (output txo) {
-    var pow = function(x){
-      var result = x^2;
-      return result;
-    }
+  clause commit(output txo) returns (output txo) {
     if(false){
       o_sum = _a + _b;
     } else {
@@ -25,7 +21,12 @@ contract MultisigGame {
 
   @finish
   @justsig-required
-  public clause reveal(output txo) returns (output txo) {
+  clause reveal(output txo) returns (output txo) {
+  }
+
+  private clause pow(string hoge) returns (bool result){
+    var result = x^2;
+    return result;
   }
 
   modifier test(){}

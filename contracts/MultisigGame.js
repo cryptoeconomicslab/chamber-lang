@@ -15,6 +15,13 @@ class MultisigGame {
       
     }
   
+    /**
+    * @description MultisigGame.pow
+    */
+    static function pow(tx) {
+      
+    }
+  
   
   }
   

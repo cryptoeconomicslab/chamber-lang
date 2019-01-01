@@ -75,8 +75,9 @@ Constructor
 Clause
   = 
   annotations:Annotations?
-  __ "public"? __ "clause" __ name:StringForClauseName __ args:Args __ modifier:StringForClauseName? __ returns:Returns? __ returnArgs:ReturnArgs? __ statement:Statement {
-      return { annotations:annotations, name: name, args: args, modifier:modifier, returnArgs:returnArgs, statement: statement}
+  __ scope:("public" / "private")?
+  __ "clause" __ name:StringForClauseName __ args:Args __ modifier:StringForClauseName? __ returns:Returns? __ returnArgs:ReturnArgs? __ statement:Statement {
+      return { annotations:annotations, scope: scope, name: name, args: args, modifier:modifier, returnArgs:returnArgs, statement: statement}
     }
 
 

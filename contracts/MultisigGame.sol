@@ -15,12 +15,7 @@ contract MultisigGame {
     [annotations: client_verification&exit]
       continuable  (bytes hashedHandB => bytes), (bytes hashedHandA => bytes)
     */
-    var pow = function(x){
-      var result = x ^ 2;
-      return result;
-    }
     
-
     if(false){
       o_sum = _a + _b
     } else {
@@ -49,6 +44,23 @@ contract MultisigGame {
       justsig-required  
     */
     
+  }
+
+  /**
+  * @dev MultisigGame.pow
+  */
+  function pow(string hoge)
+  private
+  pure
+  returns (bool result)
+  {
+    /*
+    [annotations: client_verification&exit]
+      
+    */
+    var result = x ^ 2;
+
+
   }
 
 
