@@ -13,7 +13,7 @@ contract MultisigGame {
   {
     /*
     [annotations: client_verification&exit]
-      continuable  (bytes hashedHandB => bytes), (bytes hashedHandA => bytes)
+       continuable  (bytes hashedHandB => bytes), (bytes hashedHandA => bytes)
     */
     
     if(false){
@@ -40,7 +40,7 @@ contract MultisigGame {
   {
     /*
     [annotations: client_verification&exit]
-      finish  
+       finish  
       justsig-required  
     */
     
@@ -54,13 +54,9 @@ contract MultisigGame {
   pure
   returns (bool result)
   {
-    /*
-    [annotations: client_verification&exit]
-      
-    */
+    
     var result = x ^ 2;
-
-
+    result;
   }
 
 

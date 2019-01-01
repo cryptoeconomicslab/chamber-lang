@@ -26,7 +26,7 @@ contract MultisigGame {
 
   private clause pow(string hoge) returns (bool result){
     var result = x^2;
-    return result;
+    result;
   }
 
   modifier test(){}
