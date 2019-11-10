@@ -24,7 +24,8 @@
   "devDependencies": {
     "mocha": "^5.2.0",
     "parcel-bundler": "^1.12.4",
-    "parcel-plugin-text": "^0.9.5"
+    "parcel-plugin-text": "^0.9.5",
+    "sass": "^1.23.3"
   },
   "extensions": [
     "peg",
