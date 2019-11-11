@@ -1,0 +1,78 @@
+@import './scss/foundation.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222222;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  z-index: 10;
+}
+
+#message {
+  border-radius: 3px;
+  font-size: 0.75rem;
+  padding: 0 0.5rem;
+  color: #fff;
+  background: rgba(0,0,0,0.2);
+  height: 1.5rem;
+  line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  &.error {
+    background: #FC4384;
+  }
+  &.success {
+    background: #00a7aa;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0 1em;
+  height: 2.5em;
+  line-height: 2.5em;
+  border-radius: 2px;
+  text-align: center;
+  &:hover{
+    background: rgba(255,255,255,0.05)
+  }
+}
+
+.example__txt {
+  color: rgba(255,255,255,0.7);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding-right: 0.25rem;;
+}
+
+.example__divider {
+  border-left: 1px solid rgba(255,255,255,0.3);
+  padding-right: 1rem;
+  margin-left: 1rem;
+}
+
+.codes {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.CodeMirror {
+  flex: 1;
+  height: calc(100vh - 3rem) !important;
+  position: fixed !important;
+  width: 50%;
+}
+
+#solidity + .CodeMirror {
+  left: 50%;
+}
