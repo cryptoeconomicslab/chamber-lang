@@ -1,25 +1,27 @@
 <html>
-  <link rel="stylesheet" href="src.4d02f965.css" />
+  <head>
+    <link rel="stylesheet" href="src.9eee44b0.css" />
+    <title>OVM compiler</title>
+    <link rel="stylesheet" href="src.71a37b79.css" />
+  </head>
   <body>
-    <h3>OVM compiler</h3>
-    <div>
-      <select id="example-select">
-        <option>checkpoint</option>
-        <option>exit</option>
-        <option>ownership</option>
-        <option>swap</option>
-        <option>order</option>
-      </select>
+    <div class="header">
+      <div class="btns">
+        <span class="example__txt"
+          >OVM compiler<span class="example__divider"></span>examples →
+        </span>
+        <button class="example btn" id="checkpoint">checkpoint</button>
+        <button class="example btn" id="exit">exit</button>
+        <button class="example btn" id="ownership">ownership</button>
+        <button class="example btn" id="swap">swap</button>
+        <button class="example btn" id="order">order</button>
+      </div>
+      <div id="message"></div>
     </div>
-    <textarea id="codearea"></textarea>
-    <div id="message"></div>
-    <textarea id="solidity"></textarea>
-    <script src="src.126a1106.js"></script>
-    <style>
-      .CodeMirror {
-        border: 1px solid #eee;
-        height: 46vh;
-      }
-    </style>
+    <div class="codes">
+      <textarea id="codearea" class="code"></textarea>
+      <textarea id="solidity" class="code"></textarea>
+    </div>
+    <script src="src.616c0fd3.js"></script>
   </body>
 </html>
