@@ -6,4 +6,4 @@ coverage
 .db/*
 .env
 .cache
-dist
+build
