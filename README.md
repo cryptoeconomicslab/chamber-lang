@@ -4,7 +4,7 @@
 
 ### DEMO
 
-https://cryptoeconomicslab.github.io/chamber-lang
+https://ovm-compiler.netlify.com/
 
 ### How to install
 
