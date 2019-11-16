@@ -7,3 +7,7 @@ coverage
 .env
 .cache
 build
+dist
+
+# editor
+.vscode
