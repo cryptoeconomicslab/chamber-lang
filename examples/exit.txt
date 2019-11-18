@@ -1,2 +1,2 @@
-def exit(su) := 
-IncludedAt(su) and !eval(su)
+def exit(su, inclusionProof) := 
+IncludedAt(su, inclusionProof) and !eval(su)
