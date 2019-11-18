@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const { compile } = require('../lib/index')
 const pegSrc = load('../lib/chamber.txt').replace(/\\\\/g, '\\')
-const solTemplate = load('../lib/sol.txt')
+const solTemplate = load('../lib/sol.ejs')
 
 function load(filePath) {
   return fs.readFileSync(path.join(__dirname, filePath)).toString()

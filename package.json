@@ -27,8 +27,11 @@
     "parcel-plugin-text": "^0.9.5",
     "sass": "^1.23.3"
   },
-  "extensions": [
-    "peg",
-    "ejs"
-  ]
+  "parcel-plugin-text": {
+    "extentions": [
+      "peg",
+      "ejs",
+      "txt"
+    ]
+  }
 }
