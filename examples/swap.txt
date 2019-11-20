@@ -1,12 +1,13 @@
 def swap(new_owner, prev_owner, c_token, c_range) := 
-  with Tx(self) as tx {
-    with SU() as c_su {
+  with Bytes() as tx {
+    SameRange(tx, self)
+    and with SU() as c_su {
       assert(c_su.address, self.address)
       and assert(c_su.token, c_token)
       and assert(c_su.range, c_range)
       and assert(c_su.block_number, block_number)
       and assert(c_su.new_owner, prev_owner)
       and assert(c_su.prev_owner, new_owner)
-      and (IncludedAt(c_su) and SignedBy(tx, new_owner)) or (!IncludedAt(c_su) and SignedBy(tx, prev_owner))
+      and (IncludedAt(c_su) and IsValidSignature(tx, new_owner)) or (!IncludedAt(c_su) and IsValidSignature(tx, prev_owner))
     }
   }

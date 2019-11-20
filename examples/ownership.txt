@@ -1,4 +1,7 @@
 def ownership(owner) :=
-  with Tx(su) as tx {
-    SignedBy(tx, owner)
+  with Bytes() as tx {
+    SameRange(tx, self)
+    and with Bytes() as signature {
+      IsValidSignature(tx, owner, signature)
+    }
   }
