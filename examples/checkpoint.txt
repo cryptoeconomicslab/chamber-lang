@@ -1,6 +1,10 @@
 def checkpoint(B, C) := 
-for b in LessThan(B) {
-  for su in SU(b, C) {
-    eval(su)
+for b in Integer() {
+  !LessThan(b, B)
+  or for su in SU() {
+    !with Bytes() as inclisionProof {
+      verifyInclusion(su, coin, inclisionProof, b)
+    }
+    or eval(su)
   }
 }

@@ -13,7 +13,8 @@ def order(maker, c_token, c_amount, min_block_number) :=
 
 def exit_correspondent(c_su, maker) :=
   (exit(c_su) and deposit_exists(c_su.token, c_su.range)) or (
-    with Tx(c_su.range) as tx {
-      IsValidSignature(maker)
+    with Tx() as tx {
+      SameRange(tx, self)
+      and IsValidSignature(maker)
     }
   )
