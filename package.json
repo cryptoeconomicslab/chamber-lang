@@ -16,6 +16,7 @@
     "codemirror": "^5.49.2",
     "ejs": "^2.6.1",
     "ethereumjs-util": "^6.0.0",
+    "ovm-compiler": "git+https://github.com/cryptoeconomicslab/ovm-compiler.git",
     "pegjs": "^0.10.0",
     "pegjs-prolog-parser": "^1.1.1",
     "sol-trace": "^0.1.3",
