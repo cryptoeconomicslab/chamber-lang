@@ -4,9 +4,7 @@ require('codemirror/mode/python/python')
 require('codemirror/lib/codemirror.css')
 require('codemirror/theme/yonce.css')
 
-const pegSrc = require('../lib/chamber.txt')
-const solTemplate = require('../lib/sol.ejs')
-const OVMCompiler = require('../lib')
+const { Parser, SolidityCodeGenerator, Transpiler } = require('ovm-compiler')
 
 const checkpoint = require('../examples/checkpoint.txt')
 const exit = require('../examples/exit.txt')
@@ -59,7 +57,12 @@ function main() {
   })
 
   function compile(instance) {
-    const result = OVMCompiler.compile(instance.getValue(), solTemplate, pegSrc)
+    const parser = new Parser()
+    const compiledPredicates = Transpiler.calculateInteractiveNodes(
+      parser.parse(instance.getValue())
+    )
+    const generator = new SolidityCodeGenerator()
+    const result = generator.generate(compiledPredicates)
     outputArea.setValue(result)
     messageDom.innerText = 'succeed'
     messageDom.className = 'success'
