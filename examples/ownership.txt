@@ -1,7 +1,11 @@
-def ownership(owner) :=
+def ownership(token, range, block_number, owner) :=
   with Bytes() as tx {
-    SameRange(tx, self)
+    eq(tx.adderss, Tx.address)
+    and eq(tx.0, token)
+    and within(tx.1, range)
+    and eq(tx.2, block_number)
     and with Bytes() as signature {
       IsValidSignature(tx, owner, signature)
     }
   }
+
