@@ -8,6 +8,3 @@ coverage
 .cache
 build
 dist
-
-# editor
-.vscode
