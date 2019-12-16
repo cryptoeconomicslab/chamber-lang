@@ -1,6 +1,6 @@
-def checkpoint(B, C) := 
-for b in LessThan(B) {
-  for su in SU(b, C) {
-    eval(su)
+def checkpoint(su) := 
+for b in LessThan(su.2) {
+  for old_su in SU(b, su.0, su.1) {
+    old_su()
   }
 }

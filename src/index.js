@@ -4,19 +4,21 @@ require('codemirror/mode/python/python')
 require('codemirror/lib/codemirror.css')
 require('codemirror/theme/yonce.css')
 
-const { Parser, SolidityCodeGenerator, Transpiler } = require('ovm-compiler')
+const { generateSolidityCode } = require('ovm-compiler')
 
 const checkpoint = require('../examples/checkpoint.txt')
 const exit = require('../examples/exit.txt')
 const ownership = require('../examples/ownership.txt')
 const swap = require('../examples/swap.txt')
 const order = require('../examples/order.txt')
+const fastFinality = require('../examples/ff.txt')
 const examples = {
   checkpoint,
   exit,
   ownership,
   swap,
-  order
+  order,
+  fastFinality
 }
 
 function main() {
@@ -57,12 +59,7 @@ function main() {
   })
 
   function compile(instance) {
-    const parser = new Parser()
-    const compiledPredicates = Transpiler.calculateInteractiveNodes(
-      parser.parse(instance.getValue())
-    )
-    const generator = new SolidityCodeGenerator()
-    const result = generator.generate(compiledPredicates)
+    const result = generateSolidityCode(instance.getValue())
     outputArea.setValue(result)
     messageDom.innerText = 'succeed'
     messageDom.className = 'success'

@@ -1,0 +1,11 @@
+def fastFinality(merchant, operator, tx) :=
+(SignedBy(tx, merchant)
+  and SignedBy(tx, operator))
+or with Su() as paymentSu {
+  IncludedAt(paymentSu, paymentSu.0, paymentSu.1, paymentSu.2)
+  and SignedBy(paymentSu, operator)
+  and SignedBy(tx, merchant)
+  and Equal(paymentSu.3.address, Ownership)
+  and Equal(paymentSu.3.0, merchant)
+  and SameAmount(paymentSu.1, tx.1)
+}
