@@ -17,7 +17,7 @@ def order(maker, c_token, c_amount, min_block_number, max_block_number, tx) :=
 
 def withdraw(c_su, maker) :=
   (Exit(c_su) and DepositExists(c_su.0, c_su.1))
-  or Tx(c_su.1).any(tx ->
+  or Tx(c_su.0, c_su.1, c_su.2).any(tx ->
       IsValidSignature(tx, maker)
   )
   

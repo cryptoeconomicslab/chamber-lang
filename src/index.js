@@ -30,7 +30,7 @@ function generateSolidityCode(source) {
   const compiledPredicates = transpiler.transpilePropertyDefsToCompiledPredicate(
     chamberParser.parse(source)
   )
-  const codeGenerator = new SolidityCodeGenerator({})
+  const codeGenerator = new SolidityCodeGenerator()
   return codeGenerator.generate(compiledPredicates)
 }
 
