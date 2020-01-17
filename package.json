@@ -12,9 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@cryptoeconomicslab/ovm-parser": "^0.2.3",
+    "@cryptoeconomicslab/ovm-solidity-generator": "^0.2.3",
+    "@cryptoeconomicslab/ovm-transpiler": "^0.2.3",
+    "babel-polyfill": "^6.26.0",
     "codemirror": "^5.49.2",
-    "ethereumjs-util": "^6.0.0",
-    "ovm-compiler": "git+https://github.com/cryptoeconomicslab/ovm-compiler.git#v0.1.6"
+    "ethereumjs-util": "^6.0.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",

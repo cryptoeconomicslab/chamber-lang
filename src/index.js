@@ -3,8 +3,12 @@ require('codemirror/mode/javascript/javascript')
 require('codemirror/mode/python/python')
 require('codemirror/lib/codemirror.css')
 require('codemirror/theme/yonce.css')
-
-const { generateSolidityCode } = require('ovm-compiler')
+require('babel-polyfill')
+const parser = require('@cryptoeconomicslab/ovm-parser')
+const transpiler = require('@cryptoeconomicslab/ovm-transpiler')
+const {
+  SolidityCodeGenerator
+} = require('@cryptoeconomicslab/ovm-solidity-generator')
 
 const checkpoint = require('../examples/checkpoint.txt')
 const exit = require('../examples/exit.txt')
@@ -19,6 +23,15 @@ const examples = {
   swap,
   order,
   fastFinality
+}
+
+function generateSolidityCode(source) {
+  const chamberParser = new parser.Parser()
+  const compiledPredicates = transpiler.transpilePropertyDefsToCompiledPredicate(
+    chamberParser.parse(source)
+  )
+  const codeGenerator = new SolidityCodeGenerator()
+  return codeGenerator.generate(compiledPredicates)
 }
 
 function main() {
@@ -59,10 +72,11 @@ function main() {
   })
 
   function compile(instance) {
-    const result = generateSolidityCode(instance.getValue())
-    outputArea.setValue(result)
-    messageDom.innerText = 'succeed'
-    messageDom.className = 'success'
+    generateSolidityCode(instance.getValue()).then(result => {
+      outputArea.setValue(result)
+      messageDom.innerText = 'succeed'
+      messageDom.className = 'success'
+    })
   }
 }
 
