@@ -1,5 +1,5 @@
 def swap(new_owner, prev_owner, c_token, c_range, block_number, tx) := 
-  with SU() as c_su {
+  SU().any(c_su ->
     assert(c_su.address, self.address)
     and assert(c_su.0, c_token)
     and assert(c_su.1, c_range)
@@ -7,4 +7,4 @@ def swap(new_owner, prev_owner, c_token, c_range, block_number, tx) :=
     and assert(c_su.3.0, prev_owner)
     and assert(c_su.3.1, new_owner)
     and IncludedAt(c_su, c_su.0, c_su.1, c_su.2) and SignedBy(tx, new_owner)
-  }
+  )
