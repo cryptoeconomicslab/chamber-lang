@@ -4,7 +4,7 @@
 
 ### DEMO
 
-https://ovm-compiler.netlify.com/
+https://ovm-compiler.netlify.app/
 
 ### How to install
 
