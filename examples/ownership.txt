@@ -1,1 +1,5 @@
-def ownership(owner, tx) := SignedBy(tx, owner)
+@library
+@quantifier("signatures,KEY,${m}")
+def SignedBy(sig, m, signer) := IsValidSignature(m, sig, signer, $secp256k1)
+
+def ownership(owner, tx) := SignedBy(tx, owner).any()

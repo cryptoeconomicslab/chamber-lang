@@ -1,6 +1,6 @@
-# OVM online compiler
+# OGS online compiler
 
-[![Build Status](https://travis-ci.org/cryptoeconomicslab/chamber-lang.svg?branch=master)](https://travis-ci.org/cryptoeconomicslab/chamber-lang)
+[![Build Status](https://travis-ci.org/cryptoeconomicslab/online-ogs-editor.svg?branch=master)](https://travis-ci.org/cryptoeconomicslab/online-ogs-editor)
 
 ### DEMO
 
