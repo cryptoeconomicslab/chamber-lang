@@ -4,34 +4,19 @@ require('codemirror/mode/python/python')
 require('codemirror/lib/codemirror.css')
 require('codemirror/theme/yonce.css')
 require('babel-polyfill')
-const parser = require('@cryptoeconomicslab/ovm-parser')
-const transpiler = require('@cryptoeconomicslab/ovm-transpiler')
 const {
-  SolidityCodeGenerator
+  generateSolidityCode
 } = require('@cryptoeconomicslab/ovm-solidity-generator')
 
-const checkpoint = require('../examples/checkpoint.txt')
-const exit = require('../examples/exit.txt')
 const ownership = require('../examples/ownership.txt')
 const swap = require('../examples/swap.txt')
 const order = require('../examples/order.txt')
 const fastFinality = require('../examples/ff.txt')
 const examples = {
-  checkpoint,
-  exit,
   ownership,
   swap,
   order,
   fastFinality
-}
-
-function generateSolidityCode(source) {
-  const chamberParser = new parser.Parser()
-  const compiledPredicates = transpiler.transpilePropertyDefsToCompiledPredicate(
-    chamberParser.parse(source)
-  )
-  const codeGenerator = new SolidityCodeGenerator()
-  return codeGenerator.generate(compiledPredicates)
 }
 
 function main() {
@@ -39,7 +24,7 @@ function main() {
   const solidity = document.getElementById('solidity')
   const messageDom = document.getElementById('message')
 
-  codearea.textContent = examples.checkpoint
+  codearea.textContent = examples.ownership
   const inputArea = CodeMirror.fromTextArea(codearea, {
     lineNumbers: true,
     theme: 'yonce',
@@ -51,7 +36,7 @@ function main() {
     readOnly: true,
     mode: 'javascript'
   })
-  inputArea.on('change', function(instance) {
+  inputArea.on('change', function (instance) {
     try {
       compile(instance)
     } catch (e) {
@@ -66,13 +51,13 @@ function main() {
   })
   compile(inputArea)
 
-  delegate(document.querySelector('.btns'), '.example', 'click', e => {
+  delegate(document.querySelector('.btns'), '.example', 'click', (e) => {
     const exampleName = e.target.id
     inputArea.setValue(examples[exampleName])
   })
 
   function compile(instance) {
-    generateSolidityCode(instance.getValue()).then(result => {
+    generateSolidityCode(instance.getValue(), () => {}).then((result) => {
       outputArea.setValue(result)
       messageDom.innerText = 'succeed'
       messageDom.className = 'success'
@@ -88,7 +73,7 @@ function on(target, type, callback, useCapture) {
   if (target.addEventListener) {
     target.addEventListener(type, callback, !!useCapture)
   } else {
-    target.attachEvent('on' + type, function() {
+    target.attachEvent('on' + type, function () {
       callback.call(target)
     })
   }
