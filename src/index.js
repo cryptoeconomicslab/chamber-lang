@@ -12,11 +12,17 @@ const ownership = require('../examples/ownership.txt')
 const swap = require('../examples/swap.txt')
 const order = require('../examples/order.txt')
 const fastFinality = require('../examples/ff.txt')
+const SignedBy = require('../examples/lib/SignedBy.txt')
+const IncludedAt = require('../examples/lib/IncludedAt.txt')
 const examples = {
   ownership,
   swap,
   order,
   fastFinality
+}
+const lib = {
+  SignedBy,
+  IncludedAt
 }
 
 function main() {
@@ -36,9 +42,9 @@ function main() {
     readOnly: true,
     mode: 'javascript'
   })
-  inputArea.on('change', function (instance) {
+  inputArea.on('change', async function (instance) {
     try {
-      compile(instance)
+      await compile(instance)
     } catch (e) {
       console.error(e)
       messageDom.innerText =
@@ -56,12 +62,16 @@ function main() {
     inputArea.setValue(examples[exampleName])
   })
 
-  function compile(instance) {
-    generateSolidityCode(instance.getValue(), () => {}).then((result) => {
-      outputArea.setValue(result)
-      messageDom.innerText = 'succeed'
-      messageDom.className = 'success'
-    })
+  async function compile(instance) {
+    const result = await generateSolidityCode(
+      instance.getValue(),
+      (_import) => {
+        return lib[_import.module]
+      }
+    )
+    outputArea.setValue(result)
+    messageDom.innerText = 'succeed'
+    messageDom.className = 'success'
   }
 }
 

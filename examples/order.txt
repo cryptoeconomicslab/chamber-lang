@@ -1,3 +1,14 @@
+from lib import SignedBy
+
+@library
+@quantifier("stored.${bucket},KEY,${key}")
+def Stored(value, bucket, key) := IsStored(bucket, key, value)
+
+@library
+@quantifier("so.block${b}.range${token},ITER,${zero}")
+def SU(so, token, b) :=
+  Stored(token, b).any()
+
 def order(maker, c_token, c_amount, min_block_number, max_block_number, tx) := 
   Range(min_block_number, max_block_number).any(b ->
     SU(b, c_token).any(c_su ->
@@ -7,10 +18,10 @@ def order(maker, c_token, c_amount, min_block_number, max_block_number, tx) :=
       and (
         Withdraw(c_su)
         or Tx(c_su.0, c_su.1, c_su.2).any(tx ->
-          IsValidSignature(tx, maker)
+          SignedBy(tx, maker)
         )
       )
-      and IsValidSignature(tx, c_su.3.0)
+      and SignedBy(tx, c_su.3.0)
     )
   )
 
@@ -18,6 +29,6 @@ def order(maker, c_token, c_amount, min_block_number, max_block_number, tx) :=
 def withdraw(c_su, maker) :=
   (Exit(c_su) and DepositExists(c_su.0, c_su.1))
   or Tx(c_su.0, c_su.1, c_su.2).any(tx ->
-      IsValidSignature(tx, maker)
+      SignedBy(tx, maker)
   )
   
