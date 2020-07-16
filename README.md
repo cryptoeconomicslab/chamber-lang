@@ -1,4 +1,4 @@
-# OGS online compiler
+# Gazelle Custom State Editor
 
 [![Build Status](https://travis-ci.org/cryptoeconomicslab/online-ogs-editor.svg?branch=master)](https://travis-ci.org/cryptoeconomicslab/online-ogs-editor)
 
