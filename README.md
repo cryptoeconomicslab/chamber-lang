@@ -24,6 +24,12 @@ open http:localhost:1234
 
 1. define deprecate condition with predicate contract
 
+define StateObject and use in Gazelle.
+
+```
+client.sendTransaction(token, amount, StateObject.create(deployed address, inputs...))
+```
+
 2. write payout contract
 
 We also need to implement a PayoutContract for payment processing.
