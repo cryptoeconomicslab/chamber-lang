@@ -12,13 +12,17 @@ const ownership = require('../examples/ownership.txt')
 const swap = require('../examples/swap.txt')
 const order = require('../examples/order.txt')
 const multisig = require('../examples/multisig.txt')
+const crossSwap = require('../examples/crossSwap.txt')
+const escrow = require('../examples/escrow.txt')
 const SignedBy = require('../examples/lib/SignedBy.txt')
 const IncludedAt = require('../examples/lib/IncludedAt.txt')
 const examples = {
   ownership,
   swap,
   order,
-  multisig
+  multisig,
+  crossSwap,
+  escrow
 }
 const lib = {
   SignedBy,

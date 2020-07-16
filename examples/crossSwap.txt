@@ -1,0 +1,8 @@
+from lib import SignedBy
+
+@library
+@quantifier("hash,KEY,${hash}")
+def HashExists(preimage, hash) := IsValidHash(hash, preimage)
+
+def crossSwap(hash, lockuntil, recipient, tx) :=
+  HashExists(hash).any() and SignedBy(tx, recipient).any()
