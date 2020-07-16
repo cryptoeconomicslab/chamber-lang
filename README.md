@@ -4,7 +4,7 @@
 
 ### DEMO
 
-https://ovm-compiler.netlify.app/
+https://ogs-editor.netlify.app/
 
 ### How to install
 
