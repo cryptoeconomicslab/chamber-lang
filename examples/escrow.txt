@@ -1,0 +1,5 @@
+from lib import SignedBy
+
+def escrow(ttp, nextStateObject, tx) :=
+  SignedBy(tx, recipient).any()
+  and IsEqual(tx.3, nextStateObject)

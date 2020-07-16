@@ -1,0 +1,4 @@
+from lib import SignedBy
+
+def multisig(participant1, participant2, tx) :=
+  SignedBy(tx, participant1).any() and SignedBy(tx, participant2).any()
