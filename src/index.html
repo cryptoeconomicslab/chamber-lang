@@ -19,11 +19,29 @@
         <button class="example btn" id="swap">Plasma atomic swap</button>
         <button class="example btn" id="order">Plasma offline swap</button>
       </div>
-      <div id="message"></div>
+      <div class="right-btns">
+        <div id="message"></div>
+        <button id="helpButton">Help</button>
+      </div>
     </div>
     <div class="codes">
       <textarea id="codearea" class="code"></textarea>
       <textarea id="solidity" class="code"></textarea>
+    </div>
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <p>
+          This DSL is used for Gazelle smart contracts
+          <a
+            href="https://github.com/cryptoeconomicslab/ovm-contracts/blob/master/contracts/Predicate/plasma/OwnershipPredicate.ovm"
+            >here</a
+          >. With this DSL, developers can define new deprecation conditions
+          that can be used with Plasma. The full guide is coming soon.
+        </p>
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>

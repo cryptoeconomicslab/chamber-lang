@@ -1,4 +1,5 @@
 @import './scss/foundation.scss';
+@import './scss/modal.scss';
 
 .header {
   position: fixed;
@@ -12,28 +13,45 @@
   z-index: 10;
 }
 
+.right-btns {
+  display: flex;
+}
+
 #message {
+  margin: 0 6px;
   border-radius: 3px;
   font-size: 0.75rem;
   padding: 0 0.5rem;
   color: #fff;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   height: 1.5rem;
   line-height: 1.5rem;
   display: flex;
   align-items: center;
   &.error {
-    background: #FC4384;
+    background: #fc4384;
   }
   &.success {
     background: #00a7aa;
   }
 }
 
+#helpButton {
+  margin: 0 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  padding: 0 0.5rem;
+  color: #fff;
+  background: rgba(170, 170, 170, 0.2);
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
 .btn {
   cursor: pointer;
   display: inline-block;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background: transparent;
   color: #fff;
   font-size: 0.75rem;
@@ -43,20 +61,20 @@
   line-height: 2.5em;
   border-radius: 2px;
   text-align: center;
-  &:hover{
-    background: rgba(255,255,255,0.05)
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
   }
 }
 
 .example__txt {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 700;
   font-size: 0.75rem;
-  padding-right: 0.25rem;;
+  padding-right: 0.25rem;
 }
 
 .example__divider {
-  border-left: 1px solid rgba(255,255,255,0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
   padding-right: 1rem;
   margin-left: 1rem;
 }
