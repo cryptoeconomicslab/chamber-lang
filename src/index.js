@@ -7,6 +7,7 @@ require('babel-polyfill')
 const {
   generateSolidityCode
 } = require('@cryptoeconomicslab/ovm-solidity-generator')
+const { initModal } = require('./modal')
 
 const ownership = require('../examples/ownership.txt')
 const swap = require('../examples/swap.txt')
@@ -65,6 +66,8 @@ function main() {
     const exampleName = e.target.id
     inputArea.setValue(examples[exampleName])
   })
+
+  initModal()
 
   async function compile(instance) {
     const result = await generateSolidityCode(

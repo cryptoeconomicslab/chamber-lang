@@ -5,7 +5,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   line-height: 1.64;
-  background-color: #292A2B;
+  background-color: #292a2b;
   min-height: 100%;
 }
 
@@ -34,3 +34,6 @@ button[disabled] {
   cursor: default;
 }
 
+a {
+  color: #beeefe;
+}
