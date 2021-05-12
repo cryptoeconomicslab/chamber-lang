@@ -17,7 +17,7 @@
     "@cryptoeconomicslab/ovm-transpiler": "^0.4.1-alpha.1",
     "@cryptoeconomicslab/primitives": "^0.4.0",
     "babel-polyfill": "^6.26.0",
-    "codemirror": "^5.49.2",
+    "codemirror": "^5.58.2",
     "ethereumjs-util": "^6.0.0"
   },
   "devDependencies": {
